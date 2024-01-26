@@ -49,20 +49,21 @@ function ThemeToggle() {
   const { theme, toggleTheme, closeExpanded } = useAppContext();
 
   return (
-    <StyledSwitch onClick={closeExpanded}>
-      <input
-        type="checkbox"
-        aria-label={`Toggle theme, currently ${theme}.`}
-        onClick={toggleTheme}
-      />
-      <div>
-        {theme === "light" ? (
-          <Icon icon="game-icons:sunflower" />
-        ) : (
-          <Icon icon="game-icons:moon" />
-        )}
-      </div>
-    </StyledSwitch>
+    // <StyledSwitch onClick={closeExpanded}>
+    //   <input
+    //     type="checkbox"
+    //     aria-label={`Toggle theme, currently ${theme}.`}
+    //     onClick={toggleTheme}
+    //   />
+    //   {/* <div>
+    //     {theme === "light" ? (
+    //       <Icon icon="game-icons:sunflower" />
+    //     ) : (
+    //       <Icon icon="game-icons:moon" />
+    //     )}
+    //   </div> */}
+    // </StyledSwitch>
+    <></>
   );
 }
 // #endregion

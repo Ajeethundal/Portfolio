@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-// Icons
-import { Icon } from "@iconify/react";
-// Media
-import GH from "../images/GH.svg";
-// Components
 import { Card } from "react-bootstrap";
+import GH from "../images/GH.svg";
 
 const StyledCardComponent = styled.div`
   .card {
@@ -30,6 +26,14 @@ const StyledCardComponent = styled.div`
       border-top: var(--border);
       background: ${({ theme }) => (theme.name === "light" ? "" : "#404040")};
     }
+
+    .card-body {
+      overflow: hidden;
+    }
+
+    .card-text {
+      overflow: hidden; // or 'visible' if you want the content to extend outside the box without scrolling
+    }
   }
 `;
 
@@ -43,22 +47,10 @@ export default function StyledCard({ image, name, description, url, demo }) {
           alt={name}
           className="mx-auto"
         />
-        <Card.Body className="overflow-auto text-center">
+        <Card.Body className="text-center">
           <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          {demo !== "" && demo !== null ? (
-            <Card.Link href={demo}>
-              {"Live Demo "}
-              <Icon icon="icon-park-outline:code-computer" />
-            </Card.Link>
-          ) : null}
+          <Card.Text className="card-text">{description}</Card.Text>
         </Card.Body>
-        <Card.Footer className="text-center">
-          <Card.Link href={url}>
-            {"View on GitHub "}
-            <Icon icon="icomoon-free:github" />
-          </Card.Link>
-        </Card.Footer>
       </Card>
     </StyledCardComponent>
   );

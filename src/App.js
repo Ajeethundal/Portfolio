@@ -46,7 +46,7 @@ export default function App() {
   React.useEffect(
     function () {
       const updateTheme = () =>
-        darkMode ? setTheme("dark") : setTheme("light");
+        darkMode ? setTheme("dark") : setTheme("dark");
       updateTheme();
       dispatch(fetchGitHubInfo());
       dispatch(fetchGitHubReops());
